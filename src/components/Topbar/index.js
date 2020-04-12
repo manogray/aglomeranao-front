@@ -1,15 +1,32 @@
 import React from 'react';
-import { FiMenu } from 'react-icons/fi';
+import history from '../../services/history';
 
-import { Container, Button } from './style';
+import { FiMenu, FiArrowLeft } from 'react-icons/fi';
 
-export default function Topbar() {
-  return (
-    <Container>
-        <h2>Aglomera<span>não!</span></h2>
-        <Button>
-            <FiMenu color={'#000'} size={22} />
-        </Button>
-    </Container>
-  );
+import { Container, BackButton, MenuButton } from './style';
+
+export default function Topbar({ hasBack }) {
+
+  if(hasBack){
+    return (
+        <Container>
+            <BackButton onClick={history.goBack}>
+                <FiArrowLeft color={'#000'} size={22} />
+            </BackButton>
+            <h2>Aglomera<span>não!</span></h2>
+            <MenuButton>
+                <FiMenu color={'#000'} size={22} />
+            </MenuButton>
+        </Container>
+    );
+  }else {
+    return (
+        <Container>
+            <h2>Aglomera<span>não!</span></h2>
+            <MenuButton>
+                <FiMenu color={'#000'} size={22} />
+            </MenuButton>
+        </Container>
+    );
+  }
 }

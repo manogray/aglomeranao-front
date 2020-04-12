@@ -1,4 +1,5 @@
 import React from 'react';
+import history from '../../services/history';
 
 import { Container, ListContainer, TitleList, LateralList, Item, Store, PicIcon } from './style';
 import Topbar from '../../components/Topbar';
@@ -15,6 +16,11 @@ import cart from '../../assets/images/cart.svg';
 import drugs from '../../assets/images/drugs.svg';
 
 export default function Home() {
+  
+  function goToMarket(){
+    history.push('/mercados');
+  }
+
   return (
     <Container>
 
@@ -51,11 +57,11 @@ export default function Home() {
             <TitleList>Estabelecimentos</TitleList>
 
             <LateralList>
-                <Store>
+                <Store onClick={goToMarket}>
                     <PicIcon photo={lojas}>
                         <img src={cart} alt=""/>
                     </PicIcon>
-                    <p>Lojas</p>
+                    <p>Mercados</p>
                 </Store>
                 <Store>
                     <PicIcon photo={farmacias}>

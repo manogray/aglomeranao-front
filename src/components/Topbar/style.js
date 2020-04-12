@@ -26,7 +26,16 @@ export const Container = styled.div`
     }
 `;
 
-export const Button = styled.button`
+export const BackButton = styled.button`
+    position: absolute;
+    float: left;
+    background: none;
+    border: none;
+    margin-right: 20px;
+    left: 4%;
+`;
+
+export const MenuButton = styled.button`
     position: absolute;
     float: left;
     background: none;
