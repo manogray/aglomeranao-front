@@ -6,7 +6,7 @@ import Topbar from '../../components/Topbar';
 import Banner from '../../components/Banner';
 import { FiMapPin, FiCalendar, FiMap } from 'react-icons/fi';
 
-import people from '../../assets/images/people.jpg';
+import people from '../../assets/images/people.png';
 import lojas from '../../assets/images/960x01.png';
 import farmacias from '../../assets/images/1140-pharmacist-woman.imgcache1.png';
 import pet from '../../assets/images/petshop-chapeco-dedetizadora1.png';
@@ -28,8 +28,8 @@ export default function Home() {
         
         <Banner 
             photo={people}
-            user={'Fulaninho'} 
-            text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo aliquet lectus at fermentum. Ut sem velit, porta non neque sed, consequat dictum leo.'} 
+            user={'Lucas'} 
+            text={'A plataforma web responsiva em que você pode escolher um estabelecimento dentre os cadastrados e agendar um horário oportuno de atendimento'} 
             height={195} 
         />
 

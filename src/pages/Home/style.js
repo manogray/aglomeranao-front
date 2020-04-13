@@ -42,6 +42,9 @@ export const Item = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #fff;
+    padding: 13px 20px;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
 
     p {
         margin-top: 24px;

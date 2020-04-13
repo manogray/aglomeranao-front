@@ -30,3 +30,9 @@ export const Title = styled.div`
         margin-left: 5px;
     }
 `;
+
+export const CardHeader = styled.div`
+`;
+
+export const CardInfo = styled.div`
+`;
