@@ -1,23 +1,30 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
-import { loginSuccess } from './actions';
+import { loginSuccess, authFailure } from './actions';
 
 import api from '../../../services/api';
 import history from '../../../services/history';
 
 export function* login({ payload }){
-    const { email, password } = payload;
+    try {
+        const { email, password } = payload;
 
-    const response = yield call(api.post, 'sessions', {
-        email,
-        password
-    });
+        const response = yield call(api.post, 'sessions', {
+            email,
+            password
+        });
 
-    const { token, user } = response.data;
+        const { token, user } = response.data;
 
-    yield put(loginSuccess(token, user));
+        yield put(loginSuccess(token, user));
 
-    history.push('/home');
+        history.push('/home');
+
+    }catch(err){
+        toast.error('Falha na autenticação');
+        yield put(authFailure());
+    }
 }
 
 export default all([
