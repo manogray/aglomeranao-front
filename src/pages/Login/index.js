@@ -11,7 +11,7 @@ export default function Login() {
 
         <form action="">
             <input type="email" placeholder="Seu e-mail" />
-            <input type="password" placeholder="Sua melhor senha!"/>
+            <input type="password" placeholder="Sua senha!"/>
 
             <button type="submit">Entrar</button>
             <Link to="/register">Criar conta gratuita</Link>
