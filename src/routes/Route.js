@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
 import DefaultLayout from '../pages/_layouts/default';
+import AuthLayout from '../pages/_layouts/auth';
 
 export default function RouteWrapper({
     component: Component,
@@ -15,10 +16,12 @@ export default function RouteWrapper({
         return <Redirect to="/login" />
     }
 
+    const Layout = signed ? DefaultLayout : AuthLayout;
+
     return <Route {... rest} render={props => (
-        <DefaultLayout>
+        <Layout>
             <Component {... props}/>
-        </DefaultLayout>
+        </Layout>
     )}
     />;
 }
